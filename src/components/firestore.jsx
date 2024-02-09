@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { db } from "../config/firebase";
+import { db, auth } from "../config/firebase";
 import { collection, getDocs, addDoc, doc, deleteDoc, updateDoc } from "firebase/firestore";
 
 const FireStore = () => {
@@ -9,6 +9,7 @@ const FireStore = () => {
     director: "",
     releaseDate: "",
     hasOscar: false,
+    userId: auth?.currentUser?.uid /* current user id */
   });
   const [updatedName, setUpdatedName] = useState("");
 

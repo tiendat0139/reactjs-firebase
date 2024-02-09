@@ -7,7 +7,10 @@ import { getAuth } from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
 
 /* Firestore */
-import {getFirestore} from "firebase/firestore"
+import { getFirestore } from "firebase/firestore"
+
+/* Storage */
+import { getStorage } from "firebase/storage"
 
 const firebaseConfig = {
   apiKey: "AIzaSyCUmeRa5LXNwc04dwSQIF_APMrzl0kiFTs",
@@ -29,4 +32,6 @@ googleProvider.setCustomParameters({
 
 const db = getFirestore(app)
 
-export { auth, googleProvider, db };
+const storage = getStorage(app)
+
+export { auth, googleProvider, db, storage };

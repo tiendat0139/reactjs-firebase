@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 const Auth = lazy(() => import("./components/auth"));
 const FireStore = lazy(() => import("./components/firestore"));
+const Storage = lazy(() => import("./components/storage"));
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
               <li>
                 <Link to="firestore">FireStore</Link>
               </li>
+              <li>
+                <Link to="storage">Storage</Link>
+              </li>
             </ul>
           </section>
           <section
@@ -30,6 +34,7 @@ function App() {
             <Routes>
               <Route path="/authentication" element={<Auth />} />
               <Route path="/firestore" element={<FireStore />} />
+              <Route path="/storage" element={<Storage />} />
             </Routes>
           </section>
         </div>
